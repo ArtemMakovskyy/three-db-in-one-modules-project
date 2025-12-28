@@ -11,6 +11,9 @@
 
     <modules>
         <module>application</module>
+        <module>person-service</module>
+        <module>ai-service</module>
+        <module>sales-service</module>
     </modules>
 
     <properties>
