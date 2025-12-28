@@ -10,7 +10,10 @@ spring:
 
 logging:
   level:
-    com.zaxxer.hikari: DEBUG
+    com.zaxxer.hikari: INFO
+    org.hibernate.SQL: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: INFO
+    org.postgresql: INFO
 
 db1:
   datasource:

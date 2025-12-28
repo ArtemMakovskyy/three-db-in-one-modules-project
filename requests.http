@@ -20,7 +20,7 @@ GET http://localhost:8080/api/persons
 ###
 
 # Обновить человека по ID
-PUT http://localhost:8080/api/persons/1
+PUT http://localhost:8080/api/persons/4
 Content-Type: application/json
 
 {
