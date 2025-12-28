@@ -1,10 +1,10 @@
 // file: application/src/main/java/com/store/application/service/AiResultService.java
-package com.store.application.service;
+package com.store.ai.service;
 
-import com.store.application.dto.AiResultDto;
-import com.store.application.mapper.AiResultMapper;
-import com.store.application.model.ai.AiResult;
-import com.store.application.repository.ai.AiResultRepository;
+import com.store.ai.dto.AiResultDto;
+import com.store.ai.mapper.AiResultMapper;
+import com.store.ai.model.AiResult;
+import com.store.ai.repository.AiResultRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

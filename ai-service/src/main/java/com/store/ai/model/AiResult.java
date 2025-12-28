@@ -1,4 +1,4 @@
-package com.store.application.model.ai;
+package com.store.ai.model;
 
 import jakarta.persistence.*;
 import lombok.*;

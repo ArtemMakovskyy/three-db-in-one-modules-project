@@ -1,4 +1,4 @@
-package com.store.application.config;
+package com.store.ai.config;
 
 import jakarta.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -17,7 +17,7 @@ import java.util.Map;
 
 @Configuration
 @EnableJpaRepositories(
-        basePackages = "com.store.application.repository.ai",
+        basePackages = "com.store.ai.repository",
         entityManagerFactoryRef = "aiEntityManagerFactory",
         transactionManagerRef = "aiTransactionManager"
 )
@@ -30,12 +30,10 @@ public class AiConfig {
     }
 
     @Bean(name = "aiEntityManagerFactory")
-    public LocalContainerEntityManagerFactoryBean aiEntityManagerFactory(
-            EntityManagerFactoryBuilder builder
-    ) {
+    public LocalContainerEntityManagerFactoryBean aiEntityManagerFactory(EntityManagerFactoryBuilder builder) {
         return builder
                 .dataSource(aiDataSource())
-                .packages("com.store.application.model.ai")
+                .packages("com.store.ai.model")
                 .persistenceUnit("aiPU")
                 .properties(Map.of(
                         "hibernate.hbm2ddl.auto", "update",

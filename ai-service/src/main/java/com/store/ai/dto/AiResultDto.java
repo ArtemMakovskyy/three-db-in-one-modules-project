@@ -1,4 +1,4 @@
-package com.store.application.dto;
+package com.store.ai.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

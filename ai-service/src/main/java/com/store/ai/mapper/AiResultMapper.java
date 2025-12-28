@@ -1,7 +1,7 @@
-package com.store.application.mapper;
+package com.store.ai.mapper;
 
-import com.store.application.dto.AiResultDto;
-import com.store.application.model.ai.AiResult;
+import com.store.ai.dto.AiResultDto;
+import com.store.ai.model.AiResult;
 
 public class AiResultMapper {
 

@@ -1,8 +1,8 @@
 // file: application/src/main/java/com/store/application/controller/AiResultController.java
-package com.store.application.controller;
+package com.store.ai.controller;
 
-import com.store.application.dto.AiResultDto;
-import com.store.application.service.AiResultService;
+import com.store.ai.dto.AiResultDto;
+import com.store.ai.service.AiResultService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
