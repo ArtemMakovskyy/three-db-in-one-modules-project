@@ -1,6 +1,6 @@
-package com.store.application.repository.person;
+package com.store.person.repository;
 
-import com.store.application.model.person.Person;
+import com.store.person.model.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

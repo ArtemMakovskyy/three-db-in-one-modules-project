@@ -1,4 +1,4 @@
-package com.store.application.model.person;
+package com.store.person.model;
 
 import jakarta.persistence.*;
 import lombok.*;

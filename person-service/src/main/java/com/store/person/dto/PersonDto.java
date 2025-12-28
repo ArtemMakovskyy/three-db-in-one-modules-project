@@ -1,4 +1,4 @@
-package com.store.application.dto;
+package com.store.person.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

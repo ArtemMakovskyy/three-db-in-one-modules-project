@@ -1,9 +1,9 @@
-package com.store.application.service;
+package com.store.person.service;
 
-import com.store.application.dto.PersonDto;
-import com.store.application.mapper.PersonMapper;
-import com.store.application.model.person.Person;
-import com.store.application.repository.person.PersonRepository;
+import com.store.person.dto.PersonDto;
+import com.store.person.mapper.PersonMapper;
+import com.store.person.model.Person;
+import com.store.person.repository.PersonRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

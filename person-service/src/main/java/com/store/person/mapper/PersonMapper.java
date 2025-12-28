@@ -1,7 +1,7 @@
-package com.store.application.mapper;
+package com.store.person.mapper;
 
-import com.store.application.dto.PersonDto;
-import com.store.application.model.person.Person;
+import com.store.person.dto.PersonDto;
+import com.store.person.model.Person;
 
 public class PersonMapper {
 

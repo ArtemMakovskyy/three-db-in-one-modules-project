@@ -1,7 +1,7 @@
-package com.store.application.controller;
+package com.store.person.controller;
 
-import com.store.application.dto.PersonDto;
-import com.store.application.service.PersonService;
+import com.store.person.dto.PersonDto;
+import com.store.person.service.PersonService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

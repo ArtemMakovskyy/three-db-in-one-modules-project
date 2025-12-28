@@ -1,4 +1,4 @@
-package com.store.application.config;
+package com.store.person.config;
 
 import jakarta.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -18,7 +18,7 @@ import java.util.Map;
 
 @Configuration
 @EnableJpaRepositories(
-        basePackages = "com.store.application.repository.person",
+        basePackages = "com.store.person.repository",
         entityManagerFactoryRef = "personEntityManagerFactory",
         transactionManagerRef = "personTransactionManager"
 )
@@ -38,7 +38,7 @@ public class PersonConfig {
     ) {
         return builder
                 .dataSource(personDataSource())
-                .packages("com.store.application.model.person")
+                .packages("com.store.person.model")
                 .persistenceUnit("personPU")
                 .properties(Map.of(
                         "hibernate.hbm2ddl.auto", "update",
