@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+logging:
+  level:
+    com.zaxxer.hikari: DEBUG
+
+# ❌ НЕ ДОЛЖНО БЫТЬ spring.datasource
+
+person:
+  datasource:
+    jdbc-url: jdbc:postgresql://localhost:5434/person_db
+    username: person_user
+    password: person_pass
+    driver-class-name: org.postgresql.Driver
+
+sales:
+  datasource:
+    jdbc-url: jdbc:postgresql://localhost:5435/sales_db
+    username: sales_user
+    password: sales_pass
+    driver-class-name: org.postgresql.Driver
+
+ai:
+  datasource:
+    jdbc-url: jdbc:postgresql://localhost:5436/ai_db
+    username: ai_user
+    password: ai_pass
+    driver-class-name: org.postgresql.Driver

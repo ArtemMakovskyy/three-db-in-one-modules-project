@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+
+  postgres-person:
+    image: postgres:16
+    container_name: postgres-person
+    environment:
+      POSTGRES_DB: person
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5434:5432"
+    volumes:
+      - person_data:/var/lib/postgresql/data
+
+  postgres-sales:
+    image: postgres:16
+    container_name: postgres-sales
+    environment:
+      POSTGRES_DB: sale
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5435:5432"
+    volumes:
+      - sales_data:/var/lib/postgresql/data
+
+  postgres-ai:
+    image: postgres:16
+    container_name: postgres-ai
+    environment:
+      POSTGRES_DB: ai
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5436:5432"
+    volumes:
+      - ai_data:/var/lib/postgresql/data
+
+volumes:
+  person_data:
+  sales_data:
+  ai_data:
