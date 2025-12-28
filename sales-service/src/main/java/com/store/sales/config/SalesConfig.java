@@ -1,4 +1,4 @@
-package com.store.application.config;
+package com.store.sales.config;
 
 import jakarta.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -17,7 +17,7 @@ import java.util.Map;
 
 @Configuration
 @EnableJpaRepositories(
-        basePackages = "com.store.application.repository.sale",
+        basePackages = "com.store.sales.repository",
         entityManagerFactoryRef = "salesEntityManagerFactory",
         transactionManagerRef = "salesTransactionManager"
 )
@@ -35,7 +35,7 @@ public class SalesConfig {
     ) {
         return builder
                 .dataSource(salesDataSource())
-                .packages("com.store.application.model.sale")
+                .packages("com.store.sales.model")
                 .persistenceUnit("salesPU")
                 .properties(Map.of(
                         "hibernate.hbm2ddl.auto", "update",

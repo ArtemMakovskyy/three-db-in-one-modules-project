@@ -1,7 +1,7 @@
-package com.store.application.mapper;
+package com.store.sales.mapper;
 
-import com.store.application.dto.SaleDto;
-import com.store.application.model.sale.Sale;
+import com.store.sales.dto.SaleDto;
+import com.store.sales.model.sale.Sale;
 
 public class SaleMapper {
 

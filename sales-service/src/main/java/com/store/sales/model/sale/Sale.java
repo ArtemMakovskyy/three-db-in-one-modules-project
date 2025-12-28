@@ -1,4 +1,4 @@
-package com.store.application.model.sale;
+package com.store.sales.model.sale;
 
 import jakarta.persistence.*;
 import lombok.*;

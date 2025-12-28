@@ -1,10 +1,10 @@
 // file: application/src/main/java/com/store/application/service/SaleService.java
-package com.store.application.service;
+package com.store.sales.service;
 
-import com.store.application.dto.SaleDto;
-import com.store.application.mapper.SaleMapper;
-import com.store.application.model.sale.Sale;
-import com.store.application.repository.sale.SaleRepository;
+import com.store.sales.dto.SaleDto;
+import com.store.sales.mapper.SaleMapper;
+import com.store.sales.model.sale.Sale;
+import com.store.sales.repository.sale.SaleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

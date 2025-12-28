@@ -1,8 +1,7 @@
-// file: application/src/main/java/com/store/application/controller/SaleController.java
-package com.store.application.controller;
+package com.store.sales.controller;
 
-import com.store.application.dto.SaleDto;
-import com.store.application.service.SaleService;
+import com.store.sales.dto.SaleDto;
+import com.store.sales.service.SaleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

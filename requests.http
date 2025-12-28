@@ -41,7 +41,7 @@ POST http://localhost:8080/api/sales
 Content-Type: application/json
 
 {
-  "product": "Laptop",
+  "product": "Laptop2",
   "amount": 1200.50
 }
 
