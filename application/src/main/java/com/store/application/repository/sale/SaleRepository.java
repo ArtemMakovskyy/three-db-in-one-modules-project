@@ -1,6 +1,6 @@
-package com.store.sales.repository;
+package com.store.application.repository.sale;
 
-import com.store.sales.model.Sale;
+import com.store.application.model.sale.Sale;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

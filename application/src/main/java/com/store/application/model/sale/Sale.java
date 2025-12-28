@@ -1,22 +1,22 @@
-package com.store.person.model;
+package com.store.application.model.sale;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "person")
+@Table(name = "sale")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Person {
+public class Sale {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String product;
 
-    private Integer age;
+    private Double amount;
 }

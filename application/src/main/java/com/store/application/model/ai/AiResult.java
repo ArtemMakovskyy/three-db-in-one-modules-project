@@ -1,4 +1,4 @@
-package com.store.ai.model;
+package com.store.application.model.ai;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,6 +10,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Builder
 public class AiResult {
 
     @Id

@@ -1,8 +1,7 @@
-package com.store.ai.config;
+package com.store.application.config;
 
 import jakarta.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -14,35 +13,40 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import java.util.Map;
+
 @Configuration
 @EnableJpaRepositories(
-        basePackages = "com.store.ai.repository",
-        entityManagerFactoryRef = "aiEmf",
-        transactionManagerRef = "aiTxManager"
+        basePackages = "com.store.application.repository.ai",
+        entityManagerFactoryRef = "aiEntityManagerFactory",
+        transactionManagerRef = "aiTransactionManager"
 )
-public class AiDbConfig {
+public class AiConfig {
 
     @Bean
-    @ConfigurationProperties("ai.datasource")
+    @ConfigurationProperties("db3.datasource")
     public DataSource aiDataSource() {
         return DataSourceBuilder.create().build();
     }
 
-    @Bean
-    public LocalContainerEntityManagerFactoryBean aiEmf(
-            EntityManagerFactoryBuilder builder,
-            @Qualifier("aiDataSource") DataSource dataSource
+    @Bean(name = "aiEntityManagerFactory")
+    public LocalContainerEntityManagerFactoryBean aiEntityManagerFactory(
+            EntityManagerFactoryBuilder builder
     ) {
         return builder
-                .dataSource(dataSource)
-                .packages("com.store.ai.entity")
-                .persistenceUnit("ai")
+                .dataSource(aiDataSource())
+                .packages("com.store.application.model.ai")
+                .persistenceUnit("aiPU")
+                .properties(Map.of(
+                        "hibernate.hbm2ddl.auto", "update",
+                        "hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect"
+                ))
                 .build();
     }
 
-    @Bean
-    public PlatformTransactionManager aiTxManager(
-            @Qualifier("aiEmf") EntityManagerFactory emf
+    @Bean(name = "aiTransactionManager")
+    public PlatformTransactionManager aiTransactionManager(
+            @Qualifier("aiEntityManagerFactory") EntityManagerFactory emf
     ) {
         return new JpaTransactionManager(emf);
     }

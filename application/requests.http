@@ -1,0 +1,68 @@
+### PersonController ###
+
+# Создать человека
+POST http://localhost:8080/api/persons
+Content-Type: application/json
+
+{
+  "name": "John Doe2",
+  "age": 30
+}
+
+###
+
+# Получить человека по ID
+GET http://localhost:8080/api/persons/1
+###
+
+# Получить всех людей
+GET http://localhost:8080/api/persons
+###
+
+# Обновить человека по ID
+PUT http://localhost:8080/api/persons/1
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "age": 31
+}
+
+###
+
+# Удалить человека
+DELETE http://localhost:8080/api/persons/1
+###
+
+### SaleController ###
+
+# Создать продажу
+POST http://localhost:8080/api/sales
+Content-Type: application/json
+
+{
+  "product": "Laptop",
+  "amount": 1200.50
+}
+
+###
+
+# Получить все продажи
+GET http://localhost:8080/api/sales
+###
+
+### AiResultController ###
+
+# Создать AI результат
+POST http://localhost:8080/api/ai
+Content-Type: application/json
+
+{
+  "inputData": "Hello AI",
+  "outputData": "Hello Human"
+}
+
+###
+
+# Получить все AI результаты
+GET http://localhost:8080/api/ai

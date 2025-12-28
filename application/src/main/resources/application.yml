@@ -6,31 +6,29 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: create-drop
 
 logging:
   level:
     com.zaxxer.hikari: DEBUG
 
-# ❌ НЕ ДОЛЖНО БЫТЬ spring.datasource
-
-person:
+db1:
   datasource:
-    jdbc-url: jdbc:postgresql://localhost:5434/person_db
-    username: person_user
-    password: person_pass
+    jdbc-url: jdbc:postgresql://localhost:5434/person
+    username: postgres
+    password: postgres
     driver-class-name: org.postgresql.Driver
 
-sales:
+db2:
   datasource:
-    jdbc-url: jdbc:postgresql://localhost:5435/sales_db
-    username: sales_user
-    password: sales_pass
+    jdbc-url: jdbc:postgresql://localhost:5435/sale
+    username: postgres
+    password: postgres
     driver-class-name: org.postgresql.Driver
 
-ai:
+db3:
   datasource:
-    jdbc-url: jdbc:postgresql://localhost:5436/ai_db
-    username: ai_user
-    password: ai_pass
+    jdbc-url: jdbc:postgresql://localhost:5436/ai
+    username: postgres
+    password: postgres
     driver-class-name: org.postgresql.Driver

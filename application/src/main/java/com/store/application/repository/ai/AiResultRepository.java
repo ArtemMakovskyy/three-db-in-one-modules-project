@@ -1,6 +1,6 @@
-package com.store.ai.repository;
+package com.store.application.repository.ai;
 
-import com.store.ai.model.AiResult;
+import com.store.application.model.ai.AiResult;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
