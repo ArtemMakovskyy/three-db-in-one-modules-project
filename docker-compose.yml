@@ -2,6 +2,25 @@ version: "3.9"
 
 services:
 
+  app:
+    build: .
+    container_name: three-db-project
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres-person
+      - postgres-sales
+      - postgres-ai
+    environment:
+      # Настройки для Person DB
+      - PERSON_DB_URL=jdbc:postgresql://postgres-person:5432/person
+      # Настройки для Sales DB
+      - SALES_DB_URL=jdbc:postgresql://postgres-sales:5432/sale
+      # Настройки для AI DB
+      - AI_DB_URL=jdbc:postgresql://postgres-ai:5432/ai
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+
   postgres-person:
     image: postgres:16
     container_name: postgres-person

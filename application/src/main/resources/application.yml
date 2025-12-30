@@ -1,3 +1,4 @@
+# application/src/main/resources/application.yml
 server:
   port: 8080
 
@@ -6,32 +7,63 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     hibernate:
-      ddl-auto: create-drop
-
-logging:
-  level:
-    com.zaxxer.hikari: INFO
-    org.hibernate.SQL: INFO
-    org.hibernate.type.descriptor.sql.BasicBinder: INFO
-    org.postgresql: INFO
+      ddl-auto: update
 
 db1:
   datasource:
-    jdbc-url: jdbc:postgresql://localhost:5434/person
-    username: postgres
-    password: postgres
+    jdbc-url: ${PERSON_DB_URL:jdbc:postgresql://localhost:5434/person}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
 
 db2:
   datasource:
-    jdbc-url: jdbc:postgresql://localhost:5435/sale
-    username: postgres
-    password: postgres
+    jdbc-url: ${SALES_DB_URL:jdbc:postgresql://localhost:5435/sale}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
 
 db3:
   datasource:
-    jdbc-url: jdbc:postgresql://localhost:5436/ai
-    username: postgres
-    password: postgres
+    jdbc-url: ${AI_DB_URL:jdbc:postgresql://localhost:5436/ai}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
+
+#server:
+#  port: 8080
+#
+#spring:
+#  jpa:
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: create-drop
+#
+#logging:
+#  level:
+#    com.zaxxer.hikari: INFO
+#    org.hibernate.SQL: INFO
+#    org.hibernate.type.descriptor.sql.BasicBinder: INFO
+#    org.postgresql: INFO
+#
+#db1:
+#  datasource:
+#    jdbc-url: jdbc:postgresql://localhost:5434/person
+#    username: postgres
+#    password: postgres
+#    driver-class-name: org.postgresql.Driver
+#
+#db2:
+#  datasource:
+#    jdbc-url: jdbc:postgresql://localhost:5435/sale
+#    username: postgres
+#    password: postgres
+#    driver-class-name: org.postgresql.Driver
+#
+#db3:
+#  datasource:
+#    jdbc-url: jdbc:postgresql://localhost:5436/ai
+#    username: postgres
+#    password: postgres
+#    driver-class-name: org.postgresql.Driver
