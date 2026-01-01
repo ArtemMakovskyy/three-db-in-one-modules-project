@@ -14,6 +14,7 @@
         <module>person-service</module>
         <module>ai-service</module>
         <module>sales-service</module>
+        <module>security-jwt-token</module>
     </modules>
 
     <properties>
