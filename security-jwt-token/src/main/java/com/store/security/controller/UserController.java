@@ -4,9 +4,11 @@ import com.store.security.dto.UpdateUserRoleDto;
 import com.store.security.dto.UserResponseDto;
 import com.store.security.service.UserService;
 import jakarta.validation.Valid;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,6 +23,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/users")
 public class UserController {
     private final UserService userService;
+
+    @GetMapping
+    public String getTest() {
+        return "test users";
+    }
 
     @PutMapping("/{id}/role")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")

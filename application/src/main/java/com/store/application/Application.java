@@ -11,7 +11,8 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
                 "com.store.application",
                 "com.store.person",
                 "com.store.sales",
-                "com.store.ai"
+                "com.store.ai",
+                "com.store.security"
         }
 )
 public class Application {

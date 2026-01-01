@@ -15,9 +15,11 @@ import java.util.Set;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(transactionManager = "userTransactionManager")
 public class UserServiceImpl implements UserService {
     private static final int MINIMUM_ALLOWED_NUMBER_OF_ADMIN_USERS = 1;
     private final UserRepository userRepository;

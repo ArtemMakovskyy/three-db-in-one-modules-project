@@ -18,8 +18,9 @@ import org.hibernate.annotations.Where;
 @Setter
 @Table(name = "roles")
 @SQLDelete(sql = "UPDATE roles SET is_deleted = true WHERE id=?")
-@Where(clause = "is_deleted=false")
+@Where(clause = "is_deleted = false")
 public class Role {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,6 +29,6 @@ public class Role {
     @Column(nullable = false, unique = true)
     private RoleName name;
 
-    @Column(nullable = false)
+    @Column(name = "is_deleted", nullable = false)
     private boolean isDeleted;
 }

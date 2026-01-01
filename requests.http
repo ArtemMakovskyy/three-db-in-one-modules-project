@@ -5,8 +5,8 @@ POST http://localhost:8080/api/persons
 Content-Type: application/json
 
 {
-  "name": "John Doe2",
-  "age": 30
+  "name": "John Doe",
+  "age": 31
 }
 
 ###

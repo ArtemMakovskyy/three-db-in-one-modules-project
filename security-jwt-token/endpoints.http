@@ -1,0 +1,45 @@
+### Переменные окружения
+@baseUrl = http://localhost:8080
+@authToken = ваш_полученный_jwt_токен_здесь
+
+### 1. Регистрация нового пользователя POST {{baseUrl}}/auth/register
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "email": "customer@example.com",
+  "firstName": "John",
+  "lastName": "Doe",
+  "phoneNumber": "+380509876543",
+  "password": "password123",
+  "repeatPassword": "password123"
+}
+
+> {%
+    // Скрипт для автоматического сохранения токена, если ваш клиент это поддерживает
+    // client.global.set("authToken", response.body.token);
+%}
+
+### 2. Логин (получение токена)
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "customer@example.com",
+  "password": "password123"
+}
+
+### 3. Обновление роли пользователя (Только для ADMIN)
+# ВАЖНО: Требует ROLE_ADMIN.
+# В теле запроса роль должна соответствовать вашему Enum (ROLE_ADMIN, ROLE_MANAGER, ROLE_CUSTOMER)
+PUT {{baseUrl}}/users/1/role
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "role": "ROLE_MANAGER"
+}
+
+### 4. Логаут (добавление токена в черный список)
+POST {{baseUrl}}/auth/logout
+Authorization: Bearer {{authToken}}
