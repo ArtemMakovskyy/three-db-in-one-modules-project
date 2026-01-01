@@ -1,0 +1,9 @@
+security:
+  paths:
+    - /auth/**
+    - /error/**
+    - /health/**
+    - /actuator/**
+jwt:
+  expiration: ${JWT_EXPIRATION:86400000}
+  secret: ${JWT_SECRET:three-db-in-one-modulesi13112023secretkey123456789012}
