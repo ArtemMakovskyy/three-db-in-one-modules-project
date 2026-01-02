@@ -1,3 +1,15 @@
+@baseUrl = http://localhost:8080
+@authToken = eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTc2NzM2MDM5OSwiZXhwIjoxNzY3NDQ2Nzk5fQ.PcHoIKo1oA2YkRQBQjo_QNiS92PINntTsaUYwzXtK9bcPmEECFaqD9SkPpPKbhT5
+
+### 2.1 Логин (получение токена)
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@example.com",
+  "password": "password123"
+}
+
 ### PersonController ###
 
 # Создать человека
@@ -5,7 +17,7 @@ POST http://localhost:8080/api/persons
 Content-Type: application/json
 
 {
-  "name": "John Doe",
+  "name": "John Doeу",
   "age": 31
 }
 
@@ -38,17 +50,19 @@ DELETE http://localhost:8080/api/persons/1
 
 # Создать продажу
 POST http://localhost:8080/api/sales
+Authorization: Bearer {{authToken}}
 Content-Type: application/json
 
 {
-  "product": "Laptop2",
-  "amount": 1200.50
+  "product": "LaptopT",
+  "amount": 1200.11
 }
 
 ###
 
 # Получить все продажи
 GET http://localhost:8080/api/sales
+Authorization: Bearer {{authToken}}
 ###
 
 ### AiResultController ###

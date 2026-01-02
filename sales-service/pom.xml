@@ -13,6 +13,14 @@
     <packaging>jar</packaging>
 
     <dependencies>
+<!--        Що змінено: Додано залежність spring-boot-starter-security. -->
+<!--        Це необхідно для того, щоб модуль "знав", що таке анотація -->
+<!--        @PreAuthorize, -->
+<!--        і міг скомпілювати код контролера.-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -1,6 +1,6 @@
 ### Переменные окружения
 @baseUrl = http://localhost:8080
-@authToken = ваш_полученный_jwt_токен_здесь
+@authToken = eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTc2NzM1OTMxOCwiZXhwIjoxNzY3NDQ1NzE4fQ.OzvRwL0Vb-wMSpfXxosTsp9OiSWF4ivQDJfwlUaFEkpm4EQBnZxSo3lR8FUKN1MJ
 
 ### 1. Регистрация нового пользователя POST {{baseUrl}}/auth/register
 POST {{baseUrl}}/auth/register
@@ -28,6 +28,16 @@ Content-Type: application/json
   "email": "customer@example.com",
   "password": "password123"
 }
+
+### 2.1 Логин (получение токена)
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@example.com",
+  "password": "password123"
+}
+
 
 ### 3. Обновление роли пользователя (Только для ADMIN)
 # ВАЖНО: Требует ROLE_ADMIN.

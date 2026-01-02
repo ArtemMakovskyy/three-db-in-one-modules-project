@@ -32,12 +32,12 @@ CREATE TABLE users_roles (
 );
 
 -- 05 Insert Users (Admin and Manager)
-INSERT INTO users (email, first_name, last_name, password, is_deleted)
-VALUES ('admin12345@gmail.com', 'Admin', 'Administrator', '$2a$10$YXWuaxop./1Z5qCzGMtnkOsXaPhX1NAwnGb1MFsQNHZyLWR6ypAUy', false);
-
-INSERT INTO users (email, first_name, last_name, password, is_deleted)
-VALUES ('manager12345@gmail.com', 'Manag', 'Manager', '$2a$10$SYOJnUyUPRRtZq5vwVseuOr9gPDBG3gJE8NDw2aHKacC/jiUIhiWK', false);
-
--- Link Users to Roles
-INSERT INTO users_roles (user_id, role_id) VALUES (1, 1); -- Admin
-INSERT INTO users_roles (user_id, role_id) VALUES (2, 2); -- Manager
+-- INSERT INTO users (email, first_name, last_name, password, is_deleted)
+-- VALUES ('admin12345@gmail.com', 'Admin', 'Administrator', '$2a$10$YXWuaxop./1Z5qCzGMtnkOsXaPhX1NAwnGb1MFsQNHZyLWR6ypAUy', false);
+--
+-- INSERT INTO users (email, first_name, last_name, password, is_deleted)
+-- VALUES ('manager12345@gmail.com', 'Manag', 'Manager', '$2a$10$SYOJnUyUPRRtZq5vwVseuOr9gPDBG3gJE8NDw2aHKacC/jiUIhiWK', false);
+--
+-- -- Link Users to Roles
+-- INSERT INTO users_roles (user_id, role_id) VALUES (1, 1); -- Admin
+-- INSERT INTO users_roles (user_id, role_id) VALUES (2, 2); -- Manager

@@ -1,4 +1,3 @@
-// file: application/src/main/java/com/store/application/controller/AiResultController.java
 package com.store.ai.controller;
 
 import com.store.ai.dto.AiResultDto;

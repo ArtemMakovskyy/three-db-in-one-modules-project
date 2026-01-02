@@ -46,6 +46,7 @@
             <version>${project.version}</version>
         </dependency>
 
+<!--     потрыбна бути для ынших модулыв з секюріті-->
         <dependency>
             <groupId>com.store</groupId>
             <artifactId>security-jwt-token</artifactId>

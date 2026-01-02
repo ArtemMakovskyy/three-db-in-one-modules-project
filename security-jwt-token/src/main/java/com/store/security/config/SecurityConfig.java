@@ -18,7 +18,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
-@EnableMethodSecurity
+@EnableMethodSecurity(prePostEnabled = true) // ПЕРЕВІРЕНО: Має бути true для роботи @PreAuthorize
 public class SecurityConfig {
     @Value("${security.paths}")
     private String[] paths;

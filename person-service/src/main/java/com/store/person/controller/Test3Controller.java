@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class Test3Controller {
 
     @GetMapping
-    @PreAu
     public String test(){
         return "test";
     }
