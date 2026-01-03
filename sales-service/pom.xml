@@ -13,6 +13,10 @@
     <packaging>jar</packaging>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+        </dependency>
 <!--        Що змінено: Додано залежність spring-boot-starter-security. -->
 <!--        Це необхідно для того, щоб модуль "знав", що таке анотація -->
 <!--        @PreAuthorize, -->
