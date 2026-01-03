@@ -13,6 +13,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
+import liquibase.integration.spring.SpringLiquibase;
 
 @Configuration
 @EnableJpaRepositories(
@@ -22,7 +23,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 )
 public class UserConfig {
 
-    @Bean
+    @Bean(name = "userDataSource")
     @ConfigurationProperties("db4.datasource")
     public DataSource userDataSource() {
         return DataSourceBuilder.create().build();
@@ -48,5 +49,14 @@ public class UserConfig {
             @Qualifier("userEntityManagerFactory") EntityManagerFactory emf
     ) {
         return new JpaTransactionManager(emf);
+    }
+
+    @Bean
+    public SpringLiquibase liquibase(@Qualifier("userDataSource") DataSource dataSource) {
+        SpringLiquibase liquibase = new SpringLiquibase();
+        liquibase.setDataSource(dataSource);
+        // Исправлен путь к мастер-файлу (проверьте наличие буквы 'a' в changelog)
+        liquibase.setChangeLog("classpath:db/changelog/db.changelog-master.yaml");
+        return liquibase;
     }
 }

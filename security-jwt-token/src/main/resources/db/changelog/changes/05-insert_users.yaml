@@ -1,0 +1,106 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-user-admin
+      author: artemmakovskyy
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: email
+                  value: "admin@example.com"
+              - column:
+                  name: first_name
+                  value: "Admin"
+              - column:
+                  name: last_name
+                  value: "Administrator"
+              - column:
+                  name: password
+                  value: "$2a$10$/23h7EWHuFRue25bcUgAKObbjuQdfuWe6wZIazGkYKLj1JrgW3kA6"
+              - column:
+                  name: is_deleted
+                  valueBoolean: false
+  - changeSet:
+      id: insert-user_roles-admin
+      author: artemmakovskyy
+      changes:
+        - insert:
+            tableName: users_roles
+            columns:
+              - column:
+                  name: user_id
+                  valueNumeric: 1
+              - column:
+                  name: role_id
+                  valueNumeric: 1
+  - changeSet:
+      id: insert-user-manager
+      author: artemmakovskyy
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: email
+                  value: "manager@example.com"
+              - column:
+                  name: first_name
+                  value: "Manager"
+              - column:
+                  name: last_name
+                  value: "Manager"
+              - column:
+                  name: password
+                  value: "$2a$10$aLaStu4kcC5bah57ilvD..AbbBU4HzNwHnx1VS8v4GwEJ7rDtuAWm"
+              - column:
+                  name: is_deleted
+                  valueBoolean: false
+  - changeSet:
+      id: insert-user_roles-manager
+      author: artemmakovskyy
+      changes:
+        - insert:
+            tableName: users_roles
+            columns:
+              - column:
+                  name: user_id
+                  valueNumeric: 2
+              - column:
+                  name: role_id
+                  valueNumeric: 2
+  - changeSet:
+      id: insert-user-customer
+      author: artemmakovskyy
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: email
+                  value: "customer@example.com"
+              - column:
+                  name: first_name
+                  value: "User"
+              - column:
+                  name: last_name
+                  value: "Customer"
+              - column:
+                  name: password
+                  value: "$2a$10$jZtoSVrpZPR2IRzp.oZBq.tBZ5p/5oknfwLleIpOvnqVPH5H0sV86"
+              - column:
+                  name: is_deleted
+                  valueBoolean: false
+  - changeSet:
+      id: insert-user_roles-customer
+      author: artemmakovskyy
+      changes:
+        - insert:
+            tableName: users_roles
+            columns:
+              - column:
+                  name: user_id
+                  valueNumeric: 3
+              - column:
+                  name: role_id
+                  valueNumeric: 3

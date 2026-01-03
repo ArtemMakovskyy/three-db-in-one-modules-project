@@ -1,35 +1,35 @@
--- 01 Create Users Table
-CREATE TABLE users (
-                       id BIGSERIAL PRIMARY KEY,
-                       email VARCHAR(255) UNIQUE,
-                       first_name VARCHAR(255) NOT NULL,
-                       last_name VARCHAR(255) NOT NULL,
-                       phone_number VARCHAR(255),
-                       password VARCHAR(255),
-                       telegram_chat_id BIGINT UNIQUE,
-                       is_deleted BOOLEAN DEFAULT FALSE NOT NULL
-);
-
--- 02 Create Roles Table
-CREATE TABLE roles (
-                       id BIGSERIAL PRIMARY KEY,
-                       name VARCHAR(50) NOT NULL UNIQUE, -- Используем VARCHAR для совместимости с вашим Enum в Java
-                       is_deleted BOOLEAN DEFAULT FALSE NOT NULL
-);
-
--- 03 Insert Roles
-INSERT INTO roles (name) VALUES ('ROLE_ADMIN');
-INSERT INTO roles (name) VALUES ('ROLE_MANAGER');
-INSERT INTO roles (name) VALUES ('ROLE_CUSTOMER');
-
--- 04 Create Users_Roles Table
-CREATE TABLE users_roles (
-                             user_id BIGINT NOT NULL,
-                             role_id BIGINT NOT NULL,
-                             PRIMARY KEY (user_id, role_id),
-                             CONSTRAINT fk_users_roles_users FOREIGN KEY (user_id) REFERENCES users (id),
-                             CONSTRAINT fk_users_roles_roles FOREIGN KEY (role_id) REFERENCES roles (id)
-);
+-- -- 01 Create Users Table
+-- CREATE TABLE users (
+--                        id BIGSERIAL PRIMARY KEY,
+--                        email VARCHAR(255) UNIQUE,
+--                        first_name VARCHAR(255) NOT NULL,
+--                        last_name VARCHAR(255) NOT NULL,
+--                        phone_number VARCHAR(255),
+--                        password VARCHAR(255),
+--                        telegram_chat_id BIGINT UNIQUE,
+--                        is_deleted BOOLEAN DEFAULT FALSE NOT NULL
+-- );
+--
+-- -- 02 Create Roles Table
+-- CREATE TABLE roles (
+--                        id BIGSERIAL PRIMARY KEY,
+--                        name VARCHAR(50) NOT NULL UNIQUE, -- Используем VARCHAR для совместимости с вашим Enum в Java
+--                        is_deleted BOOLEAN DEFAULT FALSE NOT NULL
+-- );
+--
+-- -- 03 Insert Roles
+-- INSERT INTO roles (name) VALUES ('ROLE_ADMIN');
+-- INSERT INTO roles (name) VALUES ('ROLE_MANAGER');
+-- INSERT INTO roles (name) VALUES ('ROLE_CUSTOMER');
+--
+-- -- 04 Create Users_Roles Table
+-- CREATE TABLE users_roles (
+--                              user_id BIGINT NOT NULL,
+--                              role_id BIGINT NOT NULL,
+--                              PRIMARY KEY (user_id, role_id),
+--                              CONSTRAINT fk_users_roles_users FOREIGN KEY (user_id) REFERENCES users (id),
+--                              CONSTRAINT fk_users_roles_roles FOREIGN KEY (role_id) REFERENCES roles (id)
+-- );
 
 -- 05 Insert Users (Admin and Manager)
 -- INSERT INTO users (email, first_name, last_name, password, is_deleted)

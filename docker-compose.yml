@@ -71,7 +71,7 @@ services:
       - "5437:5432"
     volumes:
       - security_data:/var/lib/postgresql/data
-      - ./security-jwt-token/src/main/resources/docker.db/init.sql:/docker-entrypoint-initdb.d/init.sql
+#      - ./security-jwt-token/src/main/resources/docker.db/init.sql:/docker-entrypoint-initdb.d/init.sql
 
 volumes:
   person_data:

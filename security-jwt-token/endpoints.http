@@ -1,6 +1,6 @@
 ### Переменные окружения
 @baseUrl = http://localhost:8080
-@authToken = eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTc2NzM1OTMxOCwiZXhwIjoxNzY3NDQ1NzE4fQ.OzvRwL0Vb-wMSpfXxosTsp9OiSWF4ivQDJfwlUaFEkpm4EQBnZxSo3lR8FUKN1MJ
+@authToken = eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTc2NzQ0MTU0NywiZXhwIjoxNzY3NTI3OTQ3fQ.sEXkP3O1NpSPs2bxZIa1htilnHdsWlXSJnQkX0S3-N3sR73yYOeAKDgiQtTuEdkK
 
 ### 1. Регистрация нового пользователя POST {{baseUrl}}/auth/register
 POST {{baseUrl}}/auth/register
@@ -8,9 +8,9 @@ Content-Type: application/json
 
 {
   "email": "customer@example.com",
-  "firstName": "John",
-  "lastName": "Doe",
-  "phoneNumber": "+380509876543",
+  "firstName": "User",
+  "lastName": "Castomer",
+  "phoneNumber": "+380501234569",
   "password": "password123",
   "repeatPassword": "password123"
 }
@@ -20,7 +20,7 @@ Content-Type: application/json
     // client.global.set("authToken", response.body.token);
 %}
 
-### 2. Логин (получение токена)
+### 2.1. Логин (получение токена)
 POST {{baseUrl}}/auth/login
 Content-Type: application/json
 
@@ -29,7 +29,16 @@ Content-Type: application/json
   "password": "password123"
 }
 
-### 2.1 Логин (получение токена)
+### 2.2. Логин (получение токена)
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "manager@example.com",
+  "password": "password123"
+}
+
+### 2.3. Логин (получение токена)
 POST {{baseUrl}}/auth/login
 Content-Type: application/json
 
