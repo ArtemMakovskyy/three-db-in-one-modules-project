@@ -1,0 +1,18 @@
+### Тест базового контролера
+GET http://localhost:8080/api/test
+
+### Тест привітання (параметр за замовчуванням)
+GET http://localhost:8080/api/greetings
+
+### Тест привітання з іменем
+GET http://localhost:8080/api/greetings?name=Artem
+
+
+### Перевірка стану (Health)
+GET http://localhost:8080/actuator/health
+
+### Перевірка метрик Prometheus
+GET http://localhost:8080/actuator/prometheus
+
+### Список усіх доступних ендпоїнтів
+GET http://localhost:8080/actuator
