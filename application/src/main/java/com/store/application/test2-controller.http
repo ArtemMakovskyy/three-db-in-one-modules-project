@@ -1,0 +1,51 @@
+### =========================
+### SIMPLE TEST
+### =========================
+GET http://localhost:8080/api/test
+
+### =========================
+### SYNC CONTROLLER (/ts)
+### =========================
+GET http://localhost:8080/api/test/ts?message=hello-sync-1
+
+###
+GET http://localhost:8080/api/test/ts?message=hello-sync-2
+
+###
+GET http://localhost:8080/api/test/ts?message=hello-sync-3
+
+
+### =========================
+### CALLABLE CONTROLLER (/tc)
+### =========================
+GET http://localhost:8080/api/test/tc?message=hello-callable-1
+
+###
+GET http://localhost:8080/api/test/tc?message=hello-callable-2
+
+###
+GET http://localhost:8080/api/test/tc?message=hello-callable-3
+
+
+### =========================
+### DEFERRED RESULT CONTROLLER (/td)
+### =========================
+GET http://localhost:8080/api/test/td?message=hello-deferred-1
+
+###
+GET http://localhost:8080/api/test/td?message=hello-deferred-2
+
+###
+GET http://localhost:8080/api/test/td?message=hello-deferred-3
+
+
+### =========================
+### COMPLETABLE FUTURE CONTROLLER (/tcf)
+### =========================
+GET http://localhost:8080/api/test/tcf?message=hello-cf-1
+
+###
+GET http://localhost:8080/api/test/tcf?message=hello-cf-2
+
+###
+GET http://localhost:8080/api/test/tcf?message=hello-cf-3
