@@ -5,7 +5,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TestService {
+public class ThreadService {
 
     @SneakyThrows
     public String getResultWIthPause(int sec, String message){

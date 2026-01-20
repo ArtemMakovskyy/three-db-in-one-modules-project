@@ -16,3 +16,9 @@ GET http://localhost:8080/actuator/prometheus
 
 ### Список усіх доступних ендпоїнтів
 GET http://localhost:8080/actuator
+
+### Список усіх доступних ендпоїнтів
+GET http://localhost:8080/api/test/all
+
+### Список усіх доступних ендпоїнтів
+GET http://localhost:8080/api/test/tcf?message=hello
